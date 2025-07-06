@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600;800&display=swap');
+@import "tailwindcss";
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+body {
+  font-family: 'Cairo', serif;
+}
+
+
+
+
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600;800&display=swap'); */
+
+/* h1, h2, h3 {
+  font-family: 'Cairo', sans-serif;
+}  */
