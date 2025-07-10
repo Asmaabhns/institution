@@ -10,6 +10,10 @@ import photo2 from './Images/photo1.jpg';
 import SearchBar from "./SearchBar";
 
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 const MainSection = () => {
   
@@ -55,30 +59,7 @@ const MainSection = () => {
     }
   ];
 
-  // const tickerRef = useRef(null);
-  // const intervalRef = useRef(null);
 
-  // useEffect(() => {
-  //   startScrolling();
-  //   return () => stopScrolling();
-  // }, []);
-
-  // const startScrolling = () => {
-  //   let scrollAmount = tickerRef.current?.scrollTop || 0;
-  //   intervalRef.current = setInterval(() => {
-  //     if (tickerRef.current) {
-  //       scrollAmount += 1;
-  //       tickerRef.current.scrollTop = scrollAmount;
-  //       if (scrollAmount >= tickerRef.current.scrollHeight - tickerRef.current.clientHeight) {
-  //         scrollAmount = 0;
-  //       }
-  //     }
-  //   }, 30);
-  // };
-
-  // const stopScrolling = () => {
-  //   clearInterval(intervalRef.current);
-  // };
 
   return (
     <> 
@@ -86,9 +67,17 @@ const MainSection = () => {
     <section className="w-full flex flex-col md:flex-row gap-6 py-8 container mx-auto">
         {/* العمود الأيمن */}
       <div className="w-full md:w-2/3 space-y-6">
+
         {/* أنشطة وفعاليات */}
-        <div className="border-2 border-gray-200">
-          <div className="flex flex-col md:flex-row justify-between gap-4 px-4 py-4">
+        {/* <div className="border-2 border-gray-200"> */}
+              <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="border-2 border-gray-200"
+          >
+          <div className="flex flex-row  justify-between gap-4 px-4 py-4">
             <h2 className="text-2xl font-bold text-right mb-1  pb-1">أخبار وبرامج الجمعية</h2>
             <Link to={"/programms"}><button type="submit" className="bg-[rgb(31,171,232)]  w-32 text-white px-12 py-2 rounded hover:bg-[#4CAF50] ">
            المزيد...
@@ -124,12 +113,21 @@ const MainSection = () => {
     </motion.div>
   ))}
 </div>
+</motion.div>
+        {/* </div> */}
 
-        </div>
+
 
         {/* جديد مشاريعنا */}
-        <div className="border-2 border-gray-200">
-          <div className="flex flex-col md:flex-row justify-between gap-4 px-4 py-4 item-center">
+        {/* <div className="border-2 border-gray-200"> */}
+               <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="border-2 border-gray-200"
+          >
+          <div className="flex flex-row md:flex-row justify-between gap-4 px-4 py-4 item-center">
             <h2 className="text-3xl font-semibold text-right">مدرسة بيسان الخاصة</h2>
              <Link to={"/PhotoAlbum"}><button type="submit" className="bg-[rgb(31,171,232)]  w-32 text-white px-12 py-2 rounded hover:bg-[#4CAF50] ">
            المزيد...
@@ -152,11 +150,20 @@ const MainSection = () => {
               </div>
             ))}
           </div>
-        </div>
+        {/* </div> */}
+        </motion.div>
 
         {/* ألبوم الصور */}
-        <div className="border-2 border-gray-200">
-          <div className="flex flex-col md:flex-row justify-between gap-4 px-4 py-4">
+        {/* <div className="border-2 border-gray-200"> */}
+  <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="border-2 border-gray-200"
+          >
+
+          <div className="flex flex-row justify-between gap-4 px-4 py-4">
             <h2 className="text-2xl font-bold text-right mb-1  pb-1">ألبوم الصور</h2>
             <Link to={"/PhotoAlbum"}><button type="submit" className="bg-[rgb(31,171,232)]  w-32 text-white px-12 py-2 rounded hover:bg-[#4CAF50] ">
            المزيد...
@@ -196,40 +203,8 @@ const MainSection = () => {
   ))}
 </div>
 
-        </div>
+        </motion.div>
 
-       {/* <div className="w-full">
-      <h2 className="text-3xl font-bold text-right mb-3  pb-1">ألبوم الصور</h2>
-      <div className="relative">
-        <button
-          onClick={scrollLeft}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 text-3xl bg-white text-[rgb(31,171,232)] bg-opacity-70 rounded-full px-2 py-1 shadow z-10"
-        >
-          ›
-        </button>
-
-        <div
-          ref={scrollRef}
-          className="flex gap-4 overflow-x-scroll px-10 scroll-smooth scrollbar-hide"
-        >
-          {galleryImages.map((src, idx) => (
-            <img
-              key={idx}
-              src={src}
-              alt={`gallery-${idx}`}
-              className="h-32 w-48 object-cover rounded flex-shrink-0"
-            />
-          ))}
-        </div>
-
-        <button
-          onClick={scrollRight}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 text-3xl text-[rgb(31,171,232)] bg-white bg-opacity-70 rounded-full px-2 py-1 shadow z-10"
-        >
-          ‹
-        </button>
-      </div>
-    </div> */}
 
       </div>
   

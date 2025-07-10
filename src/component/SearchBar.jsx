@@ -26,23 +26,16 @@ function SearchBar() {
   return (
     <main className='mt-16'>
     <div className="bg-white text-black py-4  px-4 flex flex-col  md:flex-row justify-between items-center">
-      <div className="text-center flex  items-center gap-2">
+      <div className="text-center flex  items-center gap-2 mb-4 md:mb-0">
         <Link to="/"><img src={Logo} alt="Zajil" className="h-20 mx-auto mt-2 cursor-pointer" /></Link>
-        <div><Link to="/"><h1   className="text-2xl font-bold  text-green-600 cursor-pointer">جمعية التأهيل والتدريب الاجتماعي</h1>
+        <div><Link to="/"><h1   className="text-4xl font-bold  text-gray-600 cursor-pointer">جمعية التأهيل والتدريب الاجتماعي</h1>
         {/* <h2 className="text-xl font-bold cursor-pointer">والتدريب الاجتماعي</h2> */}
         </Link>
         </div>
       </div>
       <div className="items-center">
-        {/* <div className="flex  my-2">
-        <button className="bg-blue-400 text-white px-3 py-1 text-sm">شارك</button>
-         <input
-          type="email"
-          placeholder="ادخل بريدك الإلكتروني هنا"
-          className="shadow-md px-2 py-1 text-sm w-60"
-        /></div> */}
         <div>
-        <button className="bg-green-600 rounded-sm text-white px-3 py-1 text-sm   ">بحث</button>
+        <button className="bg-[#4CAF50]  text-white font-semibold px-3 py-1 text-sm">بحث</button>
          <input
           type="text"
           className="shadow-md px-2 py-1 text-sm w-60"

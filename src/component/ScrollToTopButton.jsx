@@ -25,11 +25,11 @@ const ScrollToTopButton = () => {
           className="
             fixed bottom-5 right-5 z-50
             w-12 h-12 rounded-full
-            bg-[rgb(31,171,232)]   text-white
+             bg-[#4CAF50] text-white
             shadow-md hover:shadow-lg
             flex items-center justify-center
             transition transform duration-300 ease-in-out
-            hover:-translate-y-1 
+            hover:-translate-y-1 hover:bg-[rgb(31,171,232)] 
           "
         >
           <svg

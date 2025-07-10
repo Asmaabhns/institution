@@ -1,34 +1,6 @@
 import { Link } from "react-router-dom";
 import React from 'react';
-import {
-  FaHome,
-  FaNewspaper,
-  FaProjectDiagram,
-  FaHandsHelping,
-  FaCertificate,
-  FaBookOpen,
-  FaVideo,
-  FaImage,
-  FaRegChartBar,
-  FaChild,
-  FaTags,
-  FaCog
-} from "react-icons/fa";
 
-const items = [
-  { title: "الرئيسية", icon: <FaHome /> },
-  { title: "أخبار", icon: <FaNewspaper /> },
-  { title: "مشاريع", icon: <FaProjectDiagram /> },
-  { title: "برامج الجمعية", icon: <FaHandsHelping /> },
-  { title: "شهادات", icon: <FaCertificate /> },
-  { title: "دراسات ومقالات", icon: <FaBookOpen /> },
-  { title: "فيديو", icon: <FaVideo /> },
-  { title: "صور", icon: <FaImage /> },
-  { title: "تقارير سنوية", icon: <FaRegChartBar /> },
-  { title: "روضة بيسان", icon: <FaChild /> },
-  { title: "تصنيفات", icon: <FaTags /> },
-  { title: "الإعدادات", icon: <FaCog /> },
-];
 import {
   LineChart,
   Line,
@@ -51,11 +23,11 @@ const data = [
 ];
 
 
-const AdminDashboard = () => {
+const Home = () => {
   return (
-    <div className="flex flex-row-reverse min-h-screen bg-gray-100" dir="rtl">      
+    <div className="flex-1 p-8 pt-4">      
       {/* المحتوى الرئيسي */}
-      <main className="flex-1 p-8">
+      {/* <main className="flex-1 p-8 pt-4"> */}
         <header className="flex justify-between items-center mb-8">
           <h2 className="text-2xl font-semibold text-[rgb(31,171,232)]">الرئيسية</h2>
           <div className="flex items-center gap-4">
@@ -122,25 +94,8 @@ const AdminDashboard = () => {
         </div>
 
         
-      </main>
+      {/* </main> */}
 
-      {/* الشريط الجانبي */}
-      <aside className="w-64 bg-[rgb(31,171,232)] text-white flex flex-col py-6 px-4">
-        <h1 className="text-2xl font-bold mb-8 tracking-wider ">لوحة التحكم</h1>
-        <nav className="flex flex-col gap-4 text-sm">
-        {items.map((item, index) => (
-          <a
-            key={index}
-            href="#"
-            className="flex items-center justify-start gap-3 p-1.5 hover:text-black transition"
-          >
-            <span className="text-xl">{item.icon}</span>
-            <span>{item.title}</span>
-          </a>
-        ))}
-      </nav>
-
-      </aside>
     </div>
   );
 };
@@ -153,4 +108,4 @@ const StatCard = ({ title, value, change, color }) => (
   </div>
 );
 
-export default AdminDashboard;
+export default Home;
